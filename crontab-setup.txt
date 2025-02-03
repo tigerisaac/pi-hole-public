@@ -1,0 +1,12 @@
+EVERY TIME I CHANGE CRONTAB IT WILL BE HERE!
+
+59 23 * * * sudo cat /var/log/pihole.log | grep query | awk '{print $1, $2, $8, $6}' > ~/filtered_pihole_log_$(date +\%F).txt && sudo sqlite3 /etc/pihole/pihole-FTL.db "SELECT datetime(timestamp, 'unixepoch'), client, domain FROM queries WHERE date(datetime(timestamp, 'unixepoch')) = date('now');" > ~/filtered_ftl_log_$(date +\%F).txt && cd ~/ && git pull origin master && git add filtered_ftl_log_$(date +\%F).txt && git commit -m "Filtered logs for $(date +\%F)" && git push origin master
+the above should work for now?? need to further test
+
+0 23 * * * sudo cat /var/log/pihole.log | grep query | awk '{print $1, $2, $8, $6}' > ~/filtered_pihole_log_$(date +\%F).txt && sudo sqlite3 /etc/pihole/pihole-FTL.db "SELECT datetime(timestamp, 'unixepoch'), client, domain FROM queries WHERE date(datetime(timestamp, 'unixepoch')) = date('now');" > ~/filtered_ftl_log_$(date +\%F).txt && cd ~/ && git pull origin master && git add filtered_ftl_log_$(date +\%F).txt && git commit -m "Filtered logs for $(date +\%F)" && git push origin master
+older was runinng 6 hours behind??
+
+FIGURED IT OUT UTC AND CST IS DIFF
+
+59 23 * * * sudo cat /var/log/pihole.log | grep query | awk '{print $1, $2, $8, $6}' > ~/filtered_pihole_log_$(date +\%F).txt && sudo sqlite3 /etc/pihole/pihole-FTL.db "SELECT datetime(timestamp, 'unixepoch', 'localtime'), client, domain FROM queries WHERE date(datetime(timestamp, 'unixepoch', 'localtime')) = date('now', 'localtime');" > ~/filtered_ftl_log_$(date +\%F).txt && cd ~/ && git pull origin master && git add filtered_ftl_log_$(date +\%F).txt && git commit -m "Filtered logs for $(date +\%F)" && git push origin master
+
