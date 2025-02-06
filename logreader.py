@@ -1,4 +1,4 @@
-# QUICK LOG TESTING
+from log import log_file_path
 import csv
 from datetime import datetime
 
@@ -53,7 +53,7 @@ def read_visits_times(visits_dict):
         if any(site in domain for site in websites):
             results.append((domain, visit_time.strftime('%I:%M %p'), concern_level))
     return results
-
+"""
 # save it to a csv file if needed
 def save_to_csv(results, output_path):
 
@@ -66,9 +66,9 @@ def save_to_csv(results, output_path):
         print(f"Data written to {output_path}")
     except Exception as e:
         print(f"Error writing to CSV: {e}")
+"""
 
-
-searched_visits = read_visits_times(read_ftl_log("filtered_ftl_log_2025-01-15.txt"))
+searched_visits = read_visits_times(read_ftl_log(log_file_path))
 
 
 

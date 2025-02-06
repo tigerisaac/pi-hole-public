@@ -1,4 +1,4 @@
-
+from log import log_file_path
 import pandas as pd
 import streamlit as st
 from dataplot import read_log_file, filter_logs, plot_combined_access_data
@@ -37,7 +37,7 @@ def main():
     st.write("built by isaac")
 
     # File and settings
-    log_file_path = "filtered_ftl_log_2025-01-04.txt" 
+    #log_file_path = "filtered_ftl_log_2025-01-04.txt" 
     websites = ["tiktok.com", "instagram.com", "youtube.com"]
     ip_address = "192.168.0.137"
 
@@ -95,7 +95,6 @@ def main():
     
     st.write("### AI overview")
     if st.button("AI overview"):
-        log_file_path = "filtered_ftl_log_2025-01-04.txt"
         logs = readai(log_file_path)  
 
                 # concerns

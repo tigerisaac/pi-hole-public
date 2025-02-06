@@ -1,3 +1,4 @@
+from log import log_file_path
 from groq import Groq
 import os
 from datetime import datetime
@@ -8,7 +9,6 @@ client = Groq(
 concerning_websites = ["tiktok.com", "instagram.com", "youtube.com"]
 concerning_hours = list(range(22, 24)) + list(range(0, 1))  
 summary_preferences = "critical insights only"  # Options like "concise", "detailed", or "critical insights only"
-
 # Function to read logs from file
 def readai(file_path):
     with open(file_path, 'r') as file:
@@ -69,7 +69,6 @@ def analyze_ai(filtered_logs):
 
 
 def main():
-    log_file_path = "filtered_ftl_log_2025-01-04.txt"
     logs = readai(log_file_path)  
 
     # concerns
