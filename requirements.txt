@@ -1,0 +1,2 @@
+pi-hole
+logging enabled - all data
