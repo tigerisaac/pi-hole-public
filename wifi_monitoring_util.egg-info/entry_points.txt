@@ -1,3 +1,0 @@
-[console_scripts]
-dataplot = dataplot:main
-logreader = logreader:main

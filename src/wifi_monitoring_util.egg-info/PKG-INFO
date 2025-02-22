@@ -1,6 +1,6 @@
 Metadata-Version: 2.2
 Name: wifi-monitoring-util
-Version: 0.1.0
+Version: 0.1.2
 Summary: Wifi Monitoring scripts in Python for the Pi-Hole
 Home-page: https://github.com/tigerisaac/wifi-monitor-util
 Author: Isaac Zhang
@@ -15,13 +15,8 @@ Classifier: Programming Language :: Python :: 3.9
 Classifier: Programming Language :: Python :: 3.10
 Classifier: Programming Language :: Python :: 3.11
 Classifier: Topic :: System :: Networking :: Monitoring
-Requires-Python: >=3.8
 Description-Content-Type: text/markdown
 License-File: LICENSE
-Requires-Dist: requests
-Requires-Dist: matplotlib
-Requires-Dist: pandas
-Requires-Dist: groq
 Provides-Extra: dev
 Requires-Dist: black; extra == "dev"
 Requires-Dist: flake8; extra == "dev"

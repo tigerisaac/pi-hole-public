@@ -1,9 +1,0 @@
-requests
-matplotlib
-pandas
-groq
-
-[dev]
-black
-flake8
-pytest
