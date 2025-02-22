@@ -1,8 +1,8 @@
-from log import log_file_path
+from wifi_monitoring_util.log import log_file_path
 import pandas as pd
 import streamlit as st
-from dataplot import read_log_file, filter_logs, plot_combined_access_data
-from airesponses import readai, filterai, analyze_ai, concerning_hours, concerning_websites, summary_preferences
+from wifi_monitoring_util.dataplot import read_log_file, filter_logs, plot_combined_access_data
+from wifi_monitoring_util.airesponses import readai, filterai, analyze_ai, concerning_hours, concerning_websites, summary_preferences
 
 
 # Main ui
@@ -100,7 +100,6 @@ def main():
                 # concerns
         filtered_logs = filterai(logs, concerning_websites, concerning_hours)
 
-                # Debug
         if filtered_logs:
             result = analyze_ai(filtered_logs)
             st.write(result)

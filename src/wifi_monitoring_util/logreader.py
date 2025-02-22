@@ -1,4 +1,4 @@
-from log import log_file_path
+from wifi_monitoring_util.log import log_file_path
 import csv
 from datetime import datetime
 
@@ -73,6 +73,5 @@ searched_visits = read_visits_times(read_ftl_log(log_file_path))
 
 
 
-for domain, time, concern in searched_visits:
-    print(f"Domain: {domain}, Time: {time}, Concern Level: {concern}")
+
 

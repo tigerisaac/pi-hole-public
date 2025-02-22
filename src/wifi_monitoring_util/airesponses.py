@@ -1,4 +1,4 @@
-from log import log_file_path
+from wifi_monitoring_util.log import log_file_path
 from groq import Groq
 import os
 from datetime import datetime
