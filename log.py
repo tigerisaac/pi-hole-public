@@ -1,1 +1,0 @@
-log_file_path = "testlog2.txt"
