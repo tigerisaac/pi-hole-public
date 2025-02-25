@@ -39,13 +39,14 @@ def main():
     # File and settings
     #log_file_path = "filtered_ftl_log_2025-01-04.txt" 
     websites = ["tiktok.com", "instagram.com", "youtube.com"]
-    ip_address = "192.168.0.137"
+    
+    ip_address = "192.168.0.137" #change to target ip address
 
     # Load logs and access counts
     access_counts = load_and_filter_logs(log_file_path, websites, ip_address)
 
     # Plot bar graph
-    st.write("### Visits per Hour (Bar Graph):")
+    st.write("### Visits per Hour:")
     plot = plot_combined_access_data(access_counts)
     st.pyplot(plot)
 
@@ -95,6 +96,15 @@ def main():
     
     st.write("### AI overview")
     if st.button("AI overview"):
+        try:
+            logs = readai(log_file_path)
+            filtered_logs = filterai(logs, concerning_websites, concerning_hours)
+            if filtered_logs:
+                result = analyze_ai(filtered_logs)
+                st.write(result)
+        except Exception as e:
+            st.write("You need a Groq API key to run this. ", e)
+        """
         logs = readai(log_file_path)  
 
                 # concerns
@@ -104,6 +114,7 @@ def main():
         if filtered_logs:
             result = analyze_ai(filtered_logs)
             st.write(result)
+        """
 if __name__ == "__main__":
     main()
 

@@ -1,2 +1,3 @@
-pi-hole
+latest version of pi-hole
 logging enabled - all data
+cronjob setup - in txt
