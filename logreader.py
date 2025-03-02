@@ -1,9 +1,8 @@
-from log import log_file_path
+from pleasesetuphere import log_file_path, ip_address
 import csv
 from datetime import datetime
 
 def read_ftl_log(fpath):
-    client_read_ip = "192.168.0.137"
     visits_times = {}
 
     exclude_subdomains = [
@@ -27,7 +26,7 @@ def read_ftl_log(fpath):
                 log_parts = [part.strip() for part in line.split('|')]
                 if len(log_parts) == 3:
                     timestamp, client_ip, domain = log_parts
-                    if client_ip == client_read_ip and not any(sub in domain for sub in exclude_subdomains):
+                    if client_ip == ip_address and not any(sub in domain for sub in exclude_subdomains):
                         visits_times[timestamp] = domain
                 else:
                     print(f"Bad entry: {line.strip()}")

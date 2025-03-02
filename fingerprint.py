@@ -1,6 +1,6 @@
 import pandas as pd
 from collections import defaultdict
-from log import log_file_path
+from pleasesetuphere import log_file_path
 # website weights
 website_weights = {
     "tiktok.com": 2.5,  
@@ -52,11 +52,12 @@ def predict_child_device(log_file):
 
 # Predict the child's device
 predicted_ip = predict_child_device(log_file_path)
-actual_child_ip = "192.168.0.137"
-
+actual_child_ip = "IF YOU KNOW THE ACTUAL CHILD'S IP ADDRESS, REPLACE THIS STRING WITH THE IP ADDRESS"
+"""
 # Print final result
 print(f"\nPredicted Child's Device: {predicted_ip}")
 if predicted_ip == actual_child_ip:
     print("✅ Correct")
 else:
     print("❌ Incorrect")
+"""

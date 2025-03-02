@@ -1,4 +1,4 @@
-from log import log_file_path
+from pleasesetuphere import log_file_path, ip_address
 from groq import Groq
 import os
 from datetime import datetime
@@ -32,7 +32,7 @@ def filterai(logs, websites, hours):
 
         # Check if log entry matches the ip
         if any(domain.endswith(website) for website in websites) and timestamp.hour in hours:
-            if client_ip == "192.168.0.137":
+            if client_ip == ip_address:
                 
                 filtered_logs.append(f"{timestamp_str} - {domain}")
 
