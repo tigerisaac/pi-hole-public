@@ -1,4 +1,4 @@
-from pleasesetuphere import log_file_path, ip_address
+from pleasesetuphere import log_file_path, ip_address, websites
 import pandas as pd
 import streamlit as st
 from dataplot import read_log_file, filter_logs, plot_combined_access_data
@@ -37,7 +37,6 @@ def main():
     st.write("built by isaac")
 
     # File and settings
-    websites = ["tiktok.com", "instagram.com", "youtube.com"] #change this to the websites u wanna see
 
     # Load logs and access counts
     access_counts = load_and_filter_logs(log_file_path, websites, ip_address)

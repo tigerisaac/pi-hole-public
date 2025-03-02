@@ -6,7 +6,7 @@ website_weights = {
     "tiktok.com": 2.5,  
     "youtube.com": 1.0,  
     "instagram.com": 1.5,
-    # add further based on child
+    # change further based on child
 }
 
 # Function to get weight for a domain

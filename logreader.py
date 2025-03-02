@@ -1,4 +1,4 @@
-from pleasesetuphere import log_file_path, ip_address
+from pleasesetuphere import log_file_path, ip_address, websites
 import csv
 from datetime import datetime
 
@@ -43,7 +43,6 @@ def get_concern_level(hour):
         return "Least Concern"
 
 def read_visits_times(visits_dict):
-    websites = {"instagram.com", "tiktok.com", "twitch.tv"}
     results = []
 
     for timestamp, domain in visits_dict.items():
