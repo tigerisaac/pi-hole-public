@@ -104,17 +104,6 @@ def main():
                 st.write(result)
         except Exception as e:
             st.write("You need a Groq API key to run this. ", e)
-        """
-        logs = readai(log_file_path)  
-
-                # concerns
-        filtered_logs = filterai(logs, concerning_websites, concerning_hours)
-
-                # Debug
-        if filtered_logs:
-            result = analyze_ai(filtered_logs)
-            st.write(result)
-        """
 if __name__ == "__main__":
     main()
 
